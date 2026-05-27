@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>بطاقة تهنئة خاصة وعيد مبارك</title>
+    <!-- Tailwind CSS Engine -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons Library -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["K_Kamran", "Cairo", "Inter", "sans-serif"],
+              serif: ["Cinzel", "Reem Kufi", "serif"],
+              arabic: ["K_Kamran", "Cairo", "sans-serif"],
+              mono: ["JetBrains Mono", "monospace"]
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;550;700&family=Cinzel:wght@400;500;600;700;850&family=Inter:wght@300;400;500;600&family=Reem+Kufi:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+      @font-face {
+        font-family: 'K_Kamran';
+        src: url('https://www.wfonts.com/download/data/2016/05/29/k-kamran/K-Kamran.ttf') format('truetype'),
+             url('https://arabicfonts.net/assets/fonts/k-kamran/download/K_Kamran.ttf') format('truetype'),
+             local('K Kamran'),
+             local('K_Kamran');
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      body {
+        font-family: 'K_Kamran', 'Cairo', 'Inter', sans-serif;
+        background-color: #030014;
+        color: #f3f4f6;
+        overflow: hidden;
+        user-select: none;
+      }
+
+      /* Background Canvas */
+      #bg-canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      /* Transitions and animations */
+      .fade-out {
+        opacity: 0;
+        transform: scale(0.95);
+        pointer-events: none;
+      }
+      .fade-in {
+        opacity: 1;
+        transform: scale(1);
+        pointer-events: auto;
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-10px) rotate(1deg); }
+      }
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      /* Text reflection glow */
+      .glowing-text {
+        text-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+      }
+    </style>
+  </head>
+  <body class="w-full h-screen relative flex items-center justify-center bg-[#02020a]">
+    
+    <!-- Deep Space Cinematic Starfield Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Global ambient cosmic lights backdrops -->
+    <div class="fixed top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-indigo-900/10 blur-[100px] pointer-events-none -z-10 animate-pulse"></div>
+    <div class="fixed bottom-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-purple-900/10 blur-[100px] pointer-events-none -z-10"></div>
+
+    <!-- MAIN WRAPPER CONTAINER -->
+    <main class="relative z-10 w-full max-w-lg mx-auto p-4 flex items-center justify-center">
+
+      <!-- ==================== 1. LOGIN / IDENTITY FORM SCREEN ==================== -->
+      <div id="login-screen" class="w-full transition-all duration-700 transform fade-in flex flex-col items-center">
+        <!-- Floating Brand Element -->
+        <div class="mb-8 text-center animate-float">
+          <div class="inline-flex p-3 rounded-2xl bg-gradient-to-b from-purple-500/10 to-indigo-500/5 border border-purple-500/20 shadow-[0_8px_32px_rgba(139,92,246,0.15)] backdrop-blur-md mb-4">
+            <i data-lucide="sparkles" class="w-8 h-8 text-purple-400"></i>
+          </div>
+          <h1 class="text-3xl font-serif font-extrabold tracking-wide text-transparent bg-clip-text bg-gradient-to-b from-sky-100 via-purple-100 to-indigo-200">
+            بوابة المعايدة الخاصة
+          </h1>
+          <p class="text-[11px] text-sky-200/40 tracking-wider font-sans mt-1">
+            مساحة هادئة لاستلام رسالتك المحمية بعناية
+          </p>
+        </div>
+
+        <!-- Glassmorphic Login Form -->
+        <div class="w-full backdrop-blur-xl bg-[#070b24]/65 border border-white/[0.08] rounded-2xl p-6 md:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+          <form id="login-form" class="space-y-6">
+            <div class="space-y-2">
+              <label for="username-input" class="block text-xs font-semibold text-sky-200/60 text-right pr-1">
+                ادخل اسمك الثنائي أو كود المعايدة
+              </label>
+              
+              <div class="relative group">
+                <input 
+                  type="text" 
+                  id="username-input" 
+                  required
+                  placeholder="مثال: عمر"
+                  autocomplete="off"
+                  class="w-full pl-4 pr-11 py-3.5 bg-sky-950/15 border border-white/10 rounded-xl focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/50 outline-none text-right text-sm text-sky-100 transition-all duration-300 placeholder-white/25 shadow-inner"
+                />
+                <div class="absolute inset-y-0 right-0 pr-3.5 flex items-center pointer-events-none text-sky-300/30 group-focus-within:text-purple-400 transition-colors duration-300">
+                  <i data-lucide="key-round" class="w-5 h-5"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Validation Error slot -->
+            <div id="error-alert" class="hidden flex items-center gap-2 p-3 rounded-lg border border-rose-500/20 bg-rose-950/20 text-xs text-rose-300 transition-all duration-300 text-right font-sans">
+              <i data-lucide="shield-alert" class="w-4 h-4 text-rose-400 flex-shrink-0"></i>
+              <span id="error-text" class="flex-1">هذا الاسم غير مسجل حالياً. يرجى التحقق من الاسم المحمي والمحاولة مرة أخرى.</span>
+            </div>
+
+            <!-- Premium Glossy Action Button -->
+            <button 
+              type="submit"
+              class="w-full relative group overflow-hidden rounded-xl p-[1px] focus:outline-none"
+            >
+              <span class="absolute inset-0 bg-gradient-to-r from-sky-400 via-purple-500 to-indigo-500 opacity-60 group-hover:opacity-100 transition-opacity duration-300"></span>
+              <span class="relative block px-6 py-3.5 bg-slate-950 rounded-[11px] text-sm font-bold text-sky-100 group-hover:bg-slate-950/40 transition-all duration-300 whitespace-nowrap">
+                فتح بطاقة التهنئة
+              </span>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- ==================== 2. THE 3D GLASSMORPHIC GREETING CARD ==================== -->
+      <div id="card-screen" class="w-full hidden transition-all duration-700 transform fade-out">
+        
+        <!-- Underlying golden glowing sphere of the card -->
+        <div class="absolute -inset-10 rounded-full blur-3xl opacity-20 bg-gradient-to-tr from-purple-600/20 via-sky-500/10 to-transparent -z-10 animate-pulse"></div>
+
+        <!-- Real 3D-Tilt Frame -->
+        <div id="tilter-box" class="w-full text-right" style="transform-style: preserve-3d; transition: transform 0.1s ease-out;">
+          
+          <!-- Card Glass layer -->
+          <div class="backdrop-blur-2xl bg-[#090e29]/45 border border-white/[0.12] rounded-3xl p-8 md:p-12 relative overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.8)] ring-1 ring-white/5">
+            
+            <!-- Real Gloss reflection overlay -->
+            <div id="card-glare" class="absolute inset-0 pointer-events-none z-20" style="background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.08) 0%, transparent 60%);"></div>
+
+            <!-- Absolute Back log out button top left -->
+            <button 
+              id="btn-logout"
+              class="absolute top-4 left-4 p-2 rounded-full text-sky-200/40 hover:text-rose-300 hover:bg-rose-500/10 transition-all duration-300 z-30 flex items-center gap-1.5 text-xs font-sans group border border-transparent hover:border-rose-500/20"
+              title="خروج من التهنئة"
+            >
+              <i data-lucide="log-out" class="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-0.5"></i>
+              <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">عودة</span>
+            </button>
+
+            <!-- Card Content with translateZ offset -->
+            <div class="space-y-8" style="transform: translateZ(40px);">
+              
+              <!-- Title Block -->
+              <div class="text-center relative">
+                <div class="inline-block relative">
+                  <i data-lucide="sparkles" class="absolute -top-2 -right-4 w-4 h-4 text-purple-300 animate-pulse"></i>
+                  <span class="text-xs text-sky-300/60 block mb-1 font-sans">بطاقة مُعايدة خاصة ومميزة</span>
+                </div>
+                <h2 class="font-serif text-4xl md:text-5xl font-extrabold tracking-wide text-transparent bg-clip-text bg-gradient-to-b from-sky-100 via-purple-200 to-indigo-100 filter drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
+                  كل عام وأنتم بخير
+                </h2>
+                <div class="w-16 h-[1.5px] bg-gradient-to-r from-transparent via-purple-400 to-transparent mx-auto mt-4"></div>
+              </div>
+
+              <!-- Message segment containing message details -->
+              <div class="p-6 md:p-8 rounded-2xl border border-white/[0.06] bg-white/[0.01] backdrop-blur-md relative overflow-hidden shadow-inner">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-purple-500/5 rounded-full blur-2xl pointer-events-none"></div>
+                
+                <div class="space-y-4 relative z-10">
+                  <div>
+                    <h3 id="profile-display-name" class="font-sans text-xl md:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-100 via-purple-200 to-white flex items-center gap-2">
+                      مرحبا بك
+                    </h3>
+                    <span id="profile-personal-title" class="text-[11px] text-sky-300/40 font-sans mt-0.5 block tracking-wider">
+                      من عبدالرحمن
+                    </span>
+                  </div>
+                  
+                  <p id="profile-message" class="text-sm md:text-base text-sky-100/95 leading-relaxed font-sans font-normal italic pr-2 border-r-2 border-purple-500/30 whitespace-pre-line text-right">
+                    نص التهنئة الخاصة بك جاهز للعرض هنا...
+                  </p>
+                </div>
+              </div>
+
+              <!-- Delicate footer lines -->
+              <div class="flex justify-center items-center gap-2 text-sky-300/20 font-sans text-xs">
+                <div class="w-4 h-[1px] bg-sky-300/10"></div>
+                <span>عيد مبارك سعيد</span>
+                <div class="w-4 h-[1px] bg-sky-300/10"></div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+
+    <!-- INLINE APPLICATION STATE LOGIC & DATABASE -->
+    <script>
+      // Consolidated client-side profiles ledger
+      const USERS_DB = {
+        ahmed: {
+          username: 'ahmed',
+          displayName: 'أحمد الأمين',
+          message: 'حضورك الرائع جعل أيام العمل والمسير أكثر إشراقاً وأشد عمقاً. تفانيك الاستثنائي وروحك الطيبة هما بركة تضيء دروبنا جميعاً. كل عام وأنت بألف خير.',
+          personalTitle: 'كبير مهندسي البرمجيات'
+        },
+        fatima: {
+          username: 'fatima',
+          displayName: 'فاطمة الحسن',
+          message: 'قبس من الأمل، طيبة فريدة، ولمسات إبداعية دقيقة دافئة تميز وجودك معنا. أنتِ تحولين التحديات الصعبة إلى تحف مرئية مبهرة. عيد مبارك سعيد وجعل الله أيامك كلها بركة وعطاء.',
+          personalTitle: 'المديرة الإبداعية الفنية'
+        },
+        sarah: {
+          username: 'sarah',
+          displayName: 'سارة جينكينز',
+          message: 'حكمتك الهادئة، إرشادك اللطيف، وثباتك القيادي الملهم هو منار دائم لرحلتنا اليومية المشتركة. شكراً لكِ من القلب، وأجمل التهاني بحلول عيد الفطر السعيد.',
+          personalTitle: 'مديرة البرامج والمشاريع الكبرى'
+        },
+        zain: {
+          username: 'zain',
+          displayName: 'زين مالك',
+          message: 'ذهنك المتقد، تفكيرك الفذ في حل الأزمات، وابتسامتك الدافئة تمنح الفضاء طاقة إيجابية نادرة. بيئة العمل دونك تفتقد معنى التميز. عيدك مبارك وسعيد.',
+          personalTitle: 'محلل أول للأنظمة الدفاعية'
+        },
+        amira: {
+          username: 'amira',
+          displayName: 'أميرة فاروق',
+          message: 'طاقتك الإبداعية الحيوية، قيادتك الواعية، وقلبك النابض بالود يجعل من كل محطة نمر بها مغامرة فريدة متكاملة الأركان. نسأل الله أن يفتح لك في هذا العيد آفاق الطموح الأكبر.',
+          personalTitle: 'نائبة رئيس قسم تفاعل المنتجات'
+        },
+        omar: {
+          username: 'omar',
+          displayName: 'رسالة خاصة',
+          message: 'اولا عيدك مبارك وكل سنة وانت بخير ، عقبال ما تعيد في الحرم ..\nثانيا ، رسالة من عبدالرحمن لعمه عمر : ...\nانت شخص محترم وانا بحبك ، بعترف ان اسلوبي احيانا ممكن يضايق او يكون مش مناسب لكن انا فعلا بحبك وبحترمك ، من النادر ان الواحد يتعرف على شخص زيك ، طيب ، محترم ، على خلق ، ومرح مش كئيب ..\nربنا يحفظك ويبارك فيك ويديمك لينا ، و ك عبدالرحمن بوعدك اشوف النقط اللي مش كويسة فيا واصلحها ، عيدك مبارك',
+          personalTitle: 'من عبدالرحمن'
+        },
+        'عمر': {
+          username: 'عمر',
+          displayName: 'رسالة خاصة',
+          message: 'اولا عيدك مبارك وكل سنة وانت بخير ، عقبال ما تعيد في الحرم ..\nثانيا ، رسالة من عبدالرحمن لعمه عمر : ...\nانت شخص محترم وانا بحبك ، بعترف ان اسلوبي احيانا ممكن يضايق او يكون مش مناسب لكن انا فعلا بحبك وبحترمك ، من النادر ان الواحد يتعرف على شخص زيك ، طيب ، محترم ، على خلق ، ومرح مش كئيب ..\nربنا يحفظك ويبارك فيك ويديمك لينا ، و ك عبدالرحمن بوعدك اشوف النقط اللي مش كويسة فيا واصلحها ، عيدك مبارك',
+          personalTitle: 'من عبدالرحمن'
+        },
+        'zozo': {
+          username: 'zozo',
+          displayName: 'رسالة خاصة',
+          message: 'اولا .. عيدك مبارك وكل عام وانتي بخير ، عقبال السنة الجاية تعيدي في الحرم ...\nثانيا ، رسالة من عبدالرحمن ...\nرغم ان منك لله ... مش عارف بس منك لله ، بهزر 😅 ، بعتذر عن اسلوبي ، عارف انه مزعج الى حد ما ودي نقطة بشتغل عليها وهصلحها ، حاولي تعيشي .. عارفة اننا من غيرك ضايعين ، ربنا يعينك ويوفقك والعيد الجاي تكوني في الحرم',
+          personalTitle: 'من عبدالرحمن'
+        },
+        'زوزو': {
+          username: 'زوزو',
+          displayName: 'رسالة خاصة',
+          message: 'اولا .. عيدك مبارك وكل عام وانتي بخير ، عقبال السنة الجاية تعيدي في الحرم ...\nثانيا ، رسالة من عبدالرحمن ...\nرغم ان منك لله ... مش عارف بس منك لله ، بهزر 😅 ، بعتذر عن اسلوبي ، عارف انه مزعج الى حد ما ودي نقطة بشتغل عليها وهصلحها ، حاولي تعيشي .. عارفة اننا من غيرك ضايعين ، ربنا يعينك ويوفقك والعيد الجاي تكوني في الحرم',
+          personalTitle: 'من عبدالرحمن'
+        },
+        'seif': {
+          username: 'seif',
+          displayName: 'رسالة خاصة',
+          message: 'منك لله .. بهزر ، كل سنة وانت طيب يا حبيبي وعقبال ما تعيد في الحرم إن شاء الله وتتجوز يا ابني ، ربنا يحفظك ويوفقك ويعينك ...\nعيدك مبارك',
+          personalTitle: 'من عبدالرحمن'
+        },
+        'سيف': {
+          username: 'سيف',
+          displayName: 'رسالة خاصة',
+          message: 'منك لله .. بهزر ، كل سنة وانت طيب يا حبيبي وعقبال ما تعيد في الحرم إن شاء الله وتتجوز يا ابني ، ربنا يحفظك ويوفقك ويعينك ...\nعيدك مبارك',
+          personalTitle: 'من عبدالرحمن'
+        },
+        'youssef': {
+          username: 'youssef',
+          displayName: 'رسالة خاصة',
+          message: 'عيدك مبارك ، كل سنة وانت طيب وعقبال ما تعيد في الحرم ، ربنا يكرمك ويبارك فيك ويجوزك ويجوزني يا ابني ...\nكل سنة وانت طيب يا حبيبي',
+          personalTitle: 'من عبدالرحمن'
+        },
+        'يوسف': {
+          username: 'يوسف',
+          displayName: 'رسالة خاصة',
+          message: 'عيدك مبارك ، كل سنة وانت طيب وعقبال ما تعيد في الحرم ، ربنا يكرمك ويبارك فيك ويجوزك ويجوزني يا ابني ...\nكل سنة وانت طيب يا حبيبي',
+          personalTitle: 'من عبدالرحمن'
+        }
+      };
+
+      // Query Elements
+      const loginForm = document.getElementById('login-form');
+      const usernameInput = document.getElementById('username-input');
+      const errorAlert = document.getElementById('error-alert');
+      const errorText = document.getElementById('error-text');
+      
+      const loginScreen = document.getElementById('login-screen');
+      const cardScreen = document.getElementById('card-screen');
+      const cardTilter = document.getElementById('tilter-box');
+      const cardGlare = document.getElementById('card-glare');
+      const btnLogout = document.getElementById('btn-logout');
+
+      const profileDisplayName = document.getElementById('profile-display-name');
+      const profilePersonalTitle = document.getElementById('profile-personal-title');
+      const profileMessage = document.getElementById('profile-message');
+
+      // Setup Lucide icons initially
+      lucide.createIcons();
+
+      // Form validation entry
+      loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const userInput = usernameInput.value.trim().toLowerCase();
+        
+        const profile = USERS_DB[userInput];
+        if (!profile) {
+          errorAlert.classList.remove('hidden');
+          if (navigator.vibrate) navigator.vibrate(100);
+          return;
+        }
+
+        // Hide errors
+        errorAlert.classList.add('hidden');
+
+        // Populate card contents
+        profileDisplayName.textContent = profile.displayName;
+        profilePersonalTitle.textContent = profile.personalTitle || '';
+        profileMessage.textContent = profile.message;
+
+        // Transition screens
+        loginScreen.classList.remove('fade-in');
+        loginScreen.classList.add('fade-out');
+
+        setTimeout(() => {
+          loginScreen.classList.add('hidden');
+          cardScreen.classList.remove('hidden');
+          
+          // Trigger entry layout
+          setTimeout(() => {
+            cardScreen.classList.remove('fade-out');
+            cardScreen.classList.add('fade-in');
+          }, 50);
+        }, 700);
+      });
+
+      // Going back action
+      btnLogout.addEventListener('click', () => {
+        cardScreen.classList.remove('fade-in');
+        cardScreen.classList.add('fade-out');
+
+        setTimeout(() => {
+          cardScreen.classList.add('hidden');
+          loginScreen.classList.remove('hidden');
+
+          setTimeout(() => {
+            loginScreen.classList.remove('fade-out');
+            loginScreen.classList.add('fade-in');
+            usernameInput.value = '';
+          }, 50);
+        }, 700);
+      });
+
+      // 3D Tilting engine & Gloss glare tracker
+      document.addEventListener('mousemove', (e) => {
+        if (cardScreen.classList.contains('hidden')) return;
+
+        const rect = cardTilter.getBoundingClientRect();
+        const width = rect.width;
+        const height = rect.height;
+
+        const x = e.clientX - rect.left - width / 2;
+        const y = e.clientY - rect.top - height / 2;
+
+        const normX = x / (width / 2);
+        const normY = y / (height / 2);
+
+        // Max rotate limit of 14 degrees
+        const tiltX = normX * 14;
+        const tiltY = -normY * 14;
+
+        cardTilter.style.transform = `perspective(1000px) rotateY(${tiltX}deg) rotateX(${tiltY}deg)`;
+
+        // Glisten glare tracking coordinate
+        const glareX = ((e.clientX - rect.left) / width) * 100;
+        const glareY = ((e.clientY - rect.top) / height) * 100;
+        cardGlare.style.background = `radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.02) 40%, transparent 70%)`;
+      });
+
+      // Ease out card tilt returning pointer
+      document.addEventListener('mouseleave', () => {
+        cardTilter.style.transform = `perspective(1000px) rotateY(0deg) rotateX(0deg)`;
+        cardTilter.style.transition = `transform 0.5s ease-out`;
+        cardGlare.style.background = `radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.08) 0%, transparent 60%)`;
+      });
+
+      // Re-enable smooth transition hover adjustments
+      cardTilter.addEventListener('mouseenter', () => {
+        cardTilter.style.transition = 'transform 0.1s ease-out';
+      });
+
+      // Canvas ambient particle space drift setup
+      const canvas = document.getElementById('bg-canvas');
+      const ctx = canvas.getContext('2d');
+
+      let width = (canvas.width = window.innerWidth);
+      let height = (canvas.height = window.innerHeight);
+
+      window.addEventListener('resize', () => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      });
+
+      class Particle {
+        constructor() {
+          this.reset();
+        }
+
+        reset() {
+          this.x = Math.random() * width;
+          this.y = Math.random() * height;
+          this.size = Math.random() * 1.8 + 0.2;
+          this.speedX = (Math.random() - 0.5) * 0.18;
+          this.speedY = (Math.random() - 0.5) * 0.18;
+          this.alpha = Math.random() * 0.8 + 0.1;
+          this.fadeSpeed = Math.random() * 0.005 + 0.002;
+          this.isBlooming = Math.random() > 0.5;
+        }
+
+        update() {
+          this.x += this.speedX;
+          this.y += this.speedY;
+
+          if (this.isBlooming) {
+            this.alpha += this.fadeSpeed;
+            if (this.alpha >= 0.95) this.isBlooming = false;
+          } else {
+            this.alpha -= this.fadeSpeed;
+            if (this.alpha <= 0.05) this.isBlooming = true;
+          }
+
+          if (this.x < 0 || this.x > width || this.y < 0 || this.y > height) {
+            this.reset();
+          }
+        }
+
+        draw() {
+          ctx.save();
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(147, 197, 253, ${this.alpha})`;
+          ctx.shadowBlur = this.size * 4;
+          ctx.shadowColor = '#818cf8';
+          ctx.fill();
+          ctx.restore();
+        }
+      }
+
+      const particles = Array.from({ length: 85 }, () => new Particle());
+
+      function animate() {
+        ctx.clearRect(0, 0, width, height);
+        particles.forEach((p) => {
+          p.update();
+          p.draw();
+        });
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+    </script>
+  </body>
+</html>

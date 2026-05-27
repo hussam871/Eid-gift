@@ -1,0 +1,6 @@
+{
+  "name": "Eid Greeting Portal",
+  "description": "A highly cinematic futuristic Eid greeting website with an elegant 3D background containing a floating crescent moon and interactive particles.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
